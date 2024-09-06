@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementary Education Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #388E3C;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav ul li a:hover {
+            background-color: #2C6B2F;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        .image-gallery, .quiz {
+            margin: 20px 0;
+        }
+        .image-gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .quiz {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .quiz h3 {
+            color: #388E3C;
+        }
+        .quiz label {
+            display: block;
+            margin: 10px 0;
+        }
+        .quiz button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .quiz button:hover {
+            background-color: #388E3C;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Elementary Education Portal</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#images">Images</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to our educational portal! Explore images and take quizzes to test your knowledge.</p>
+        </section>
+        <section id="images">
+            <h2>Educational Images</h2>
+            <div class="image-gallery">
+                <h3>Learn Addition and Subtraction</h3>
+                <img src="https://via.placeholder.com/600x315?text=Addition+and+Subtraction" alt="Learn Addition and Subtraction">
+                <p>An informative image that helps students understand the basics of addition and subtraction.</p>
+            </div>
+            <div class="image-gallery">
+                <h3>Exploring the Solar System</h3>
+                <img src="https://via.placeholder.com/600x315?text=Solar+System" alt="Exploring the Solar System">
+                <p>An engaging image that introduces the wonders of our solar system.</p>
+            </div>
+        </section>
+        <section id="quiz">
+            <h2>Quiz</h2>
+            <div class="quiz">
+                <h3>Test Your Knowledge</h3>
+                <form id="quizForm">
+                    <label>1. What is 5 + 3?</label>
+                    <input type="radio" name="question1" value="6"> 6<br>
+                    <input type="radio" name="question1" value="7"> 7<br>
+                    <input type="radio" name="question1" value="8"> 8<br>
+                    <input type="radio" name="question1" value="9"> 9<br>
+                    
+                    <label>2. What planet is known as the Red Planet?</label>
+                    <input type="radio" name="question2" value="Earth"> Earth<br>
+                    <input type="radio" name="question2" value="Mars"> Mars<br>
+                    <input type="radio" name="question2" value="Jupiter"> Jupiter<br>
+                    <input type="radio" name="question2" value="Saturn"> Saturn<br>
+                    
+                    <button type="button" onclick="checkAnswers()">Submit Answers</button>
+                </form>
+                <p id="result"></p>
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are dedicated to providing quality educational content for elementary students. Our goal is to make learning enjoyable and effective through engaging images and interactive quizzes.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or feedback, please contact us at <a href="mailto:support@educationportal.com">support@educationportal.com</a>.</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Elementary Education Portal. All rights reserved.</p>
+    </footer>
+    <script>
+        function checkAnswers() {
+            const form = document.getElementById('quizForm');
+            const result = document.getElementById('result');
+            let score = 0;
+            
+            // Check question 1
+            if (form.question1.value === '8') {
+                score++;
+            }
+            
+            // Check question 2
+            if (form.question2.value === 'Mars') {
+                score++;
+            }
+            
+            result.textContent = `You scored ${score} out of 2.`;
+        }
+    </script>
+</body>
